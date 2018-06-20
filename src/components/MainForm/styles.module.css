@@ -1,0 +1,12 @@
+.main {
+    flex: 1;
+    padding: 50px;
+}
+
+.input {
+    padding: 10px 15px;
+    border-radius: 3px;
+    border: 1px solid #000;
+    font-size: 20px;
+    margin-right: 5px;
+}
