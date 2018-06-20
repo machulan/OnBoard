@@ -7,35 +7,34 @@ module.exports = {
     },
     module: {
         rules: [{
-                test: /\.js$/,
-                exclude: /node_modules/,
-                use: {
-                    loader: 'babel-loader'
-                }
+            test: /\.js$/,
+            exclude: /node_modules/,
+            use: {
+                loader: 'babel-loader'
+            }
+        },
+        {
+            test: /\.css$/,
+            exclude: /node_modules/,
+            use: [{
+                loader: 'style-loader'
             },
             {
-                test: /\.css$/,
-                exclude: /node_modules/,
-                use: [
-                    // 'style-loader',
-                    // 'css-loader'
-                    require.resolve('style-loader'),
-                    {
-                        loader: require.resolve('css-loader'),
-                        options: {
-                            importLoaders: 1,
-                            modules: true
-                        },
-                    }
-                ]
-            }, 
-            {
-                test: /\.svg$/,
-                exclude: /node_modules/,
-                use: [
-                    'svg-react-loader'
-                ]
+                loader: 'css-loader',
+                options: {
+                    importLoaders: 1,
+                    modules: true
+                }
             }
+            ]
+        },
+        {
+            test: /\.svg$/,
+            exclude: /node_modules/,
+            use: [
+                'svg-react-loader'
+            ]
+        }
         ]
     },
     devServer: {
